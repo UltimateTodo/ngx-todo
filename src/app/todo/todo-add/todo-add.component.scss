@@ -1,0 +1,21 @@
+.form-horizontal * {
+    border-radius: 0;
+    display: inline-block;
+}
+
+.todo-add-block {
+    margin: 25px;
+    .todo-form {
+        .todo-input-block {
+            width: 90%;
+            padding-right: 25px;
+
+            .todo-form-field {
+                width: 100%;
+            }
+        }
+        .todo-btn-block {
+            width: 10%;
+        }
+    }
+}

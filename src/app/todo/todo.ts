@@ -2,7 +2,7 @@
 /**
  * @interface
  */
-interface TodoOptions {
+export interface TodoOptions {
     task: string;
     isCompleted: boolean;
 }

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { TodoOptions } from './../todo';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, AbstractControl } from '@angular/forms';
 
 /**
- * @component
+ * @author: Shoukath Mohammed
  */
 @Component({
   selector: 'todo-todo-add',
@@ -10,14 +11,25 @@ import { FormGroup, FormControl, FormBuilder, AbstractControl } from '@angular/f
   styleUrls: ['./todo-add.component.scss']
 })
 export class TodoAddComponent implements OnInit {
-
+  /**
+   * @public
+   */
   public todoAddForm: FormGroup;
+
+  /**
+   * @public
+   */
+  @Output()
+  public add: EventEmitter<TodoOptions> = new EventEmitter<TodoOptions>();
 
   /**
    * @constructor
    */
   constructor(private fb: FormBuilder) { }
 
+  /**
+   * @public
+   */
   public ngOnInit(): void {
     this.todoAddForm = this.fb.group({
       task: new FormControl(null, []),
@@ -25,7 +37,12 @@ export class TodoAddComponent implements OnInit {
     });
   }
 
-  public onTodoSubmit(form: FormGroup, value: AbstractControl): void {
-    console.log(value);
+  /**
+   * @public
+   */
+  public onTodoSubmit(form: FormGroup, value: any): void {
+    if (form.valid) {
+      this.add.emit(value);
+    }
   }
 }

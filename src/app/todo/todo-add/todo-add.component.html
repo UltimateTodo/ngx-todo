@@ -1,18 +1,20 @@
-<div class="row">
-  <div class="col-12">
-    <form [formGroup]="todoAddForm" class="form-horizontal" (onSubmit)="onTodoSubmit(todoAddForm, todoAddForm.value)">
-      <div class="row">
-        <div class="col-xs-9 col-md-10 col-lg-10">
-          <div class="form-group">
-            <input type="text" class="form-control" formControlName="task" />
+<mat-card class="todo-add-block">
+  <div class="row">
+    <div class="col-12">
+      <form class="form-horizontal todo-form" [formGroup]="todoAddForm" (ngSubmit)="onTodoSubmit(todoAddForm, todoAddForm.value)">
+        <div class="input-group">
+          <div class="todo-input-block">
+            <mat-form-field class="todo-form-field">
+              <input matInput placeholder="Task" formControlName="task">
+            </mat-form-field>
           </div>
-        </div>
-        <div class="col-xs-3 col-md-2 col-lg-2">
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Add</button>
+          <div class="todo-btn-block">
+            <button mat-raised-button color="primary" type="submit" class="bcc-btn">
+              <span mat-line>Add</span>
+            </button>
           </div>
-        </div>
-      </div>
-    </form>
+       </div>
+      </form>
+    </div>
   </div>
-</div>
+</mat-card>
