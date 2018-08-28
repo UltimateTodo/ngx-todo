@@ -5,9 +5,14 @@
         <span>{{item.task}}</span>
       </mat-checkbox>
 
-      <span class="float-right badge todo-badge" [ngClass]="item.isCompleted ? 'badge-success': 'badge-warning'">
-        {{item.isCompleted ? 'Completed': 'Pending'}}
-      </span>
+      <div class="float-right">
+        <span class="badge todo-badge" [ngClass]="item.isCompleted ? 'badge-success': 'badge-warning'">
+          {{item.isCompleted ? 'Completed': 'Pending'}}
+        </span>
+        <div class="todo-delete-block">
+          <a href="" (click)="onRemove($event)"><i class="fa fa-times"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </mat-card>

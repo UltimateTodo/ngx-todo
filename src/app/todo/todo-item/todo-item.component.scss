@@ -30,4 +30,13 @@
         margin: 6px;
         padding: 4px;
     }
+
+    .todo-delete-block {
+        margin-left: 10px;
+        display: inline-block;
+
+        * {
+            color: #000;
+        }
+    }
 }

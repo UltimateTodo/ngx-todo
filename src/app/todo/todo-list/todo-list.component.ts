@@ -29,4 +29,14 @@ export class TodoListComponent implements OnInit {
    * @description: N/A
    */
   public ngOnInit(): void { }
+
+  /**
+   * @public
+   * @return: void
+   * @description: removes the item from
+   * the list.
+   */
+  public onRemove(e: any): void {
+    this.list.splice(e, 1);
+  }
 }
