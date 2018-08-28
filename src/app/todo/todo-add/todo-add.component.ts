@@ -43,7 +43,8 @@ export class TodoAddComponent implements OnInit {
   public onTodoSubmit(form: FormGroup, value: any): void {
     if (form.valid && !!value.task) {
       this.add.emit(value);
-      this.todoAddForm.get('task').setValue(null);
+      this.todoAddForm.reset();
+      this.todoAddForm.get('task').setErrors(null);
     }
   }
 }
