@@ -23,6 +23,9 @@ export class TodoItemComponent implements OnInit {
 
   /**
    * @public
+   * @type: method<life cycle hook>
+   * @return: void
+   * @description: N/A
    */
   public ngOnInit(): void { }
 }

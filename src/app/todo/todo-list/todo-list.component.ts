@@ -12,6 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TodoListComponent implements OnInit {
   /**
    * @public
+   * @type: TodoOptions[]
    */
   @Input()
   public list: TodoOptions[];
@@ -23,6 +24,9 @@ export class TodoListComponent implements OnInit {
 
   /**
    * @public
+   * @type: method<life cycle hook>
+   * @return: void
+   * @description: N/A
    */
   public ngOnInit(): void { }
 }

@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class TodoComponent implements OnInit {
   /**
    * @public
+   * @type: TodoOptions[]
    */
   public todosList: TodoOptions[] = [];
 
@@ -22,11 +23,17 @@ export class TodoComponent implements OnInit {
 
   /**
    * @public
+   * @type: method<life cycle hook>
+   * @return: void
+   * @description: N/A
    */
   public ngOnInit(): void { }
 
   /**
    * @public
+   * @return: void
+   * @description: a helper method that adds
+   * a new todo to the todos list.
    */
   public onAddTodo(e: TodoOptions): void {
     this.todosList.push(e);

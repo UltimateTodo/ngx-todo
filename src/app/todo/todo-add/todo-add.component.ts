@@ -13,22 +13,29 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 export class TodoAddComponent implements OnInit {
   /**
    * @public
+   * @type: FormGroup
    */
   public todoAddForm: FormGroup;
 
   /**
    * @public
+   * @type: EventEmitter<TodoOptions>
    */
   @Output()
   public add: EventEmitter<TodoOptions> = new EventEmitter<TodoOptions>();
 
   /**
    * @constructor
+   *
+   * @param: {fb<FormBuilder>}
    */
   constructor(private fb: FormBuilder) { }
 
   /**
    * @public
+   * @type: method<life cycle hook>
+   * @return: void
+   * @description: N/A
    */
   public ngOnInit(): void {
     this.todoAddForm = this.fb.group({
@@ -39,6 +46,8 @@ export class TodoAddComponent implements OnInit {
 
   /**
    * @public
+   * @return: void
+   * @description: submit handler for a todo.
    */
   public onTodoSubmit(form: FormGroup, value: any): void {
     if (form.valid && !!value.task) {
