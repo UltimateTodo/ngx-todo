@@ -1,3 +1,13 @@
-<p>
-  todo-item works!
-</p>
+<mat-card class="todo-item-block" *ngIf="item">
+  <div class="row">
+    <div class="col-12">
+      <mat-checkbox (change)="item.isCompleted = $event.checked" [ngClass]="item.isCompleted ? 'todo-completed': 'todo-new'">
+        <span>{{item.task}}</span>
+      </mat-checkbox>
+
+      <span class="float-right badge todo-badge" [ngClass]="item.isCompleted ? 'badge-success': 'badge-warning'">
+        {{item.isCompleted ? 'Completed': 'Pending'}}
+      </span>
+    </div>
+  </div>
+</mat-card>

@@ -1,3 +1,3 @@
-<p>
-  todo-list works!
-</p>
+<div class="todo-list-block" *ngIf="list">
+    <todo-item *ngFor="let item of list" [item]='item'></todo-item>
+</div>

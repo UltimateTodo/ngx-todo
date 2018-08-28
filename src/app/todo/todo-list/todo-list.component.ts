@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { TodoOptions } from './../todo';
+import { Component, OnInit, Input } from '@angular/core';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
-  selector: 'todo-todo-list',
+  selector: 'todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
+  /**
+   * @public
+   */
+  @Input()
+  public list: TodoOptions[];
 
+  /**
+   * @constructor
+   */
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  /**
+   * @public
+   */
+  public ngOnInit(): void { }
 }

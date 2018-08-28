@@ -1,0 +1,33 @@
+.todo-item-block {
+    margin: 4px 25px;
+    padding: 10px 20px;
+
+    * {
+        top: 4px;
+    }
+
+    .todo-completed {
+        color: #989494;
+        text-decoration: line-through;
+
+        .mat-checkbox-background {
+            background-color: #ccc !important;
+        }
+
+        /deep/ .mat-checkbox-background {
+            background-color: #ccc !important;
+        }
+
+        /deep/ &.mat-checkbox-focused{
+            .mat-ink-ripple{
+                background-color: #ccc !important;
+            }
+        }
+    }
+
+    .todo-badge {
+        font-family: monospace;
+        margin: 6px;
+        padding: 4px;
+    }
+}
