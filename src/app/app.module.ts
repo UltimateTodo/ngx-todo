@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoAddComponent } from './todo/todo-add/todo-add.component';
+import { HeaderModule } from './shared/components/header/header.module';
 import { TodoItemComponent } from './todo/todo-item/todo-item.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { MaterialModule } from './shared/modules/material/material.module';
@@ -25,6 +26,7 @@ import { MaterialModule } from './shared/modules/material/material.module';
   ],
   imports: [
     BrowserModule
+    , HeaderModule
     , MaterialModule
     , ReactiveFormsModule
     , BrowserAnimationsModule
